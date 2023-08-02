@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style ="width: 50%;height: 500px; margin: auto" class="pt-5">
+<h2>Moving Rating Form</h2>
+<form method='POST'>
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1"
+    aria-describedby="nameHelp" name='username'>
+ 
+  </div>
+ 
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">email</label>
+    <input type="Email" class="form-control" id="exampleInputEmail1"
+    aria-describedby="emailHelp" name='email'>
+    </div>
+
+  <select class="form-select" aria-label= "Default select example"name="select" >
+   <option select>Open this select manu</option>
+   <option value="1">One</option>  
+   <option value="2">tow</option>  
+   <option value="3">three</option>  
+   <option value="4">four</option>  
+   <option value="5">five</option> 
+   </select> 
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<h4>Name----->  {{ name }}
+<h4>Email---->  {{ email }}
+<h4>Rating----->  {{ select }}
+</div>
+
+
+
+{% endblock %}
